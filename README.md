@@ -14,6 +14,7 @@
 
 4.CAAnimation.
 
+####Android 实现：<https://github.com/alienjun/WaveRefreshForAndroid>
 
 欢迎一起交流技术学习。
 
