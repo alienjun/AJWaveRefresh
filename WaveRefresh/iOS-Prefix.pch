@@ -1,0 +1,14 @@
+//
+//  iOS-Prefix.h
+//  WaveRefresh
+//
+//  Created by AlienJunX on 15/10/23.
+//  Copyright © 2015年 com.alienjun.demo. All rights reserved.
+//
+
+#ifndef iOS_Prefix_h
+#define iOS_Prefix_h
+
+
+#endif /* iOS_Prefix_h */
+#import "UIView+Additions.h"
