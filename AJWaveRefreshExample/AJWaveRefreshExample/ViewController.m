@@ -1,15 +1,15 @@
 //
 //  ViewController.m
-//  WaveRefresh
+//  AJWaveRefreshExample
 //
-//  Created by AlienJunX on 15/10/23.
-//  Copyright © 2015年 com.alienjun.demo. All rights reserved.
+//  Created by AlienJunX on 16/4/1.
+//  Copyright © 2016年 com.alienjun. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "MJRefresh.h"
-#import "BoRefreshHeader.h"
-#import "BoRefreshAutoStateFooter.h"
+#import "AJWaveRefreshHeader.h"
+#import "AJWaveRefreshAutoStateFooter.h"
 
 static const CGFloat MJDuration = 3.0;
 /**
@@ -28,10 +28,10 @@ static const CGFloat MJDuration = 3.0;
     [super viewDidLoad];
     
     self.data = [[NSMutableArray alloc] init];
-    self.tableView.header = [BoRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.header = [AJWaveRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.header beginRefreshing];
     
-    self.tableView.footer = [BoRefreshAutoStateFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.footer = [AJWaveRefreshAutoStateFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
 }
 
 

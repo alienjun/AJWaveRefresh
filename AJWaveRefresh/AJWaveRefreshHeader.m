@@ -1,23 +1,26 @@
 //
-//  BoRefreshHeader.m
-//  bobohair-iphone
+//  AJWaveRefreshHeader.m
+//  AJWaveRefresh
 //
 //  Created by AlienJunX on 15/10/16.
-//  Copyright © 2015年 Shanghai Metis IT Co.,Ltd. All rights reserved.
+//  Copyright (c) 2015 AlienJunX
+//
+//  This source code is licensed under the MIT-style license found in the
+//  LICENSE file in the root directory of this source tree.
 //
 
-#import "BoRefreshHeader.h"
-#import "BoRefreshAnimation.h"
+#import "AJWaveRefreshHeader.h"
+#import "AJWaveRefreshAnimation.h"
 
-@interface BoRefreshHeader()
+@interface AJWaveRefreshHeader()
 @property (weak, nonatomic) UILabel *label;
-@property (weak, nonatomic) BoRefreshAnimation *logoView;
+@property (weak, nonatomic) AJWaveRefreshAnimation *logoView;
 
 @end
 
-@implementation BoRefreshHeader
+@implementation AJWaveRefreshHeader
 
-- (void)prepare{
+- (void)prepare {
     [super prepare];
     
     // 设置控件的高度
@@ -27,14 +30,14 @@
     UILabel *label = [UILabel label];
     [self addSubview:label];
     self.label = label;
-    BoRefreshAnimation *logoView = [[BoRefreshAnimation alloc] initWithFrame:CGRectMake(100, 100, 75, 20)
+    AJWaveRefreshAnimation *logoView = [[AJWaveRefreshAnimation alloc] initWithFrame:CGRectMake(100, 100, 75, 20)
                                                                    grayImage:[UIImage imageNamed:@"grayLogo"]
                                                                     redImage:[UIImage imageNamed:@"redLogo"]];
     [self addSubview:logoView];
     self.logoView = logoView;
 }
 
-- (void)placeSubviews{
+- (void)placeSubviews {
     [super placeSubviews];
 
     CGFloat centerY = self.mj_h * 0.5;
@@ -45,23 +48,23 @@
 }
 
 #pragma mark 监听scrollView的contentOffset改变
-- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{
+- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
     [super scrollViewContentOffsetDidChange:change];
     
 }
 
 #pragma mark 监听scrollView的contentSize改变
-- (void)scrollViewContentSizeDidChange:(NSDictionary *)change{
+- (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
     [super scrollViewContentSizeDidChange:change];
 }
 
 #pragma mark 监听scrollView的拖拽状态改变
-- (void)scrollViewPanStateDidChange:(NSDictionary *)change{
+- (void)scrollViewPanStateDidChange:(NSDictionary *)change {
     [super scrollViewPanStateDidChange:change];
 }
 
 #pragma mark 监听控件的刷新状态
-- (void)setState:(MJRefreshState)state{
+- (void)setState:(MJRefreshState)state {
     MJRefreshCheckState;
     
     switch (state) {

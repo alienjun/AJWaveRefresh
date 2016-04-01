@@ -1,23 +1,26 @@
 //
-//  BoRefreshAutoStateFooter.m
-//  bobohair-iphone
+//  AJWaveRefreshAutoStateFooter.m
+//  AJWaveRefresh
 //
 //  Created by AlienJunX on 15/10/16.
-//  Copyright © 2015年 Shanghai Metis IT Co.,Ltd. All rights reserved.
+//  Copyright (c) 2015 AlienJunX
+//
+//  This source code is licensed under the MIT-style license found in the
+//  LICENSE file in the root directory of this source tree.
 //
 
-#import "BoRefreshAutoStateFooter.h"
-#import "BoRefreshAnimation.h"
+#import "AJWaveRefreshAutoStateFooter.h"
+#import "AJWaveRefreshAnimation.h"
 
-@interface BoRefreshAutoStateFooter()
-@property (weak, nonatomic) BoRefreshAnimation *logoView;
+@interface AJWaveRefreshAutoStateFooter()
+@property (weak, nonatomic) AJWaveRefreshAnimation *logoView;
 @end
 
-@implementation BoRefreshAutoStateFooter
+@implementation AJWaveRefreshAutoStateFooter
 
--(BoRefreshAnimation *)logoView{
+- (AJWaveRefreshAnimation *)logoView {
     if (!_logoView) {
-        BoRefreshAnimation *logoView = [[BoRefreshAnimation alloc] initWithFrame:CGRectMake(100, 100, 75, 20)
+        AJWaveRefreshAnimation *logoView = [[AJWaveRefreshAnimation alloc] initWithFrame:CGRectMake(100, 100, 75, 20)
                                                                        grayImage:[UIImage imageNamed:@"grayLogo"]
                                                                         redImage:[UIImage imageNamed:@"lightGrayLogo"]];
         [self addSubview:_logoView = logoView];
@@ -26,22 +29,22 @@
 }
 
 #pragma makr - 重写父类的方法
-- (void)prepare{
+- (void)prepare {
     [super prepare];
     
     self.mj_h = 60;
 }
 
-- (void)placeSubviews{
+- (void)placeSubviews {
     [super placeSubviews];
     
     CGFloat centerY = self.mj_h * 0.5;
-    self.stateLabel.frame = CGRectMake(0, 0, self.width, 30);
+    self.stateLabel.frame = CGRectMake(0, 0, self.frame.size.width, 30);
     self.stateLabel.center = CGPointMake(self.mj_w * 0.5, centerY + 15);
     self.logoView.center = CGPointMake(self.mj_w * 0.5, centerY - 8);
 }
 
-- (void)setState:(MJRefreshState)state{
+- (void)setState:(MJRefreshState)state {
     MJRefreshCheckState
     
     // 根据状态做事情
@@ -54,8 +57,7 @@
     }
 }
 
-
--(void)setFooterHidden:(BOOL)hidden{
+- (void)setFooterHidden:(BOOL)hidden {
     self.logoView.hidden = hidden;
     self.stateLabel.hidden = hidden;
 }

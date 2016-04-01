@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  WaveRefresh
+//  AJWaveRefreshExample
 //
-//  Created by AlienJunX on 15/10/23.
-//  Copyright © 2015年 com.alienjun.demo. All rights reserved.
+//  Created by AlienJunX on 16/4/1.
+//  Copyright © 2016年 com.alienjun. All rights reserved.
 //
 
 #import "AppDelegate.h"

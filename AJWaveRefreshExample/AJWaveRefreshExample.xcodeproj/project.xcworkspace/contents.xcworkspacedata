@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:WaveRefresh.xcodeproj">
+      location = "self:AJWaveRefreshExample.xcodeproj">
    </FileRef>
 </Workspace>

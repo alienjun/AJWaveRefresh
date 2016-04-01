@@ -1,8 +1,8 @@
-# WaveRefresh
+# AJWaveRefresh
 下拉刷新过渡动画，实现方式基于BezierPath画正弦曲线，绘制到layer上，并将这个layer设置给ImageView的mask上，这样默认情况下这个Image就是
 透明的，为了画出产品需要的波浪对函数的参数尝试了很久。
 
-![Aaron Swartz](https://github.com/alienjun/WaveRefresh/blob/master/Sceenshots/screenshot1.gif)
+![Aaron Swartz](https://github.com/alienjun/AJWaveRefresh/blob/master/Sceenshots/screenshot1.gif)
 
 ##知识点：
 
@@ -14,7 +14,7 @@
 
 4.CAAnimation.
 
-####Android 实现：<https://github.com/alienjun/WaveRefreshForAndroid>
+####Android 实现：<https://github.com/alienjun/AJWaveRefreshForAndroid>
 
 欢迎一起交流技术学习。
 

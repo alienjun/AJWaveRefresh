@@ -1,14 +1,17 @@
 //
-//  BoRefreshAnimation.m
-//  bobohair-iphone
+//  AJWaveRefreshAnimation.m
+//  AJWaveRefresh
 //
 //  Created by AlienJunX on 15/10/16.
-//  Copyright © 2015年 Shanghai Metis IT Co.,Ltd. All rights reserved.
+//  Copyright (c) 2015 AlienJunX
+//
+//  This source code is licensed under the MIT-style license found in the
+//  LICENSE file in the root directory of this source tree.
 //
 
-#import "BoRefreshAnimation.h"
+#import "AJWaveRefreshAnimation.h"
 
-@interface BoRefreshAnimation()
+@interface AJWaveRefreshAnimation()
 @property (nonatomic) CGFloat waveWidth;
 @property (nonatomic) CGFloat waveHeight;
 @property (nonatomic) CGFloat density;
@@ -24,15 +27,17 @@
 @property (weak, nonatomic) UIImageView *redLogo;
 @end
 
-@implementation BoRefreshAnimation
+@implementation AJWaveRefreshAnimation
 
--(instancetype)initWithFrame:(CGRect)frame grayImage:(UIImage *)grayImage redImage:(UIImage *)redImage{
+- (instancetype)initWithFrame:(CGRect)frame
+                    grayImage:(UIImage *)grayImage
+                     redImage:(UIImage *)redImage {
     _redLogoImage = redImage;
     _grayLogoImage = grayImage;
     return [self initWithFrame:frame];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self commonInit];
@@ -40,7 +45,7 @@
     return self;
 }
 
--(void)commonInit{
+- (void)commonInit {
     CALayer *mask = [CALayer layer];
     mask.frame = self.bounds;
     self.waveLayer = [CAShapeLayer layer];
@@ -69,7 +74,7 @@
     self.redLogo.layer.mask = mask;
 }
 
--(void)startAnimating{
+- (void)startAnimating {
     
     [self.displayLink invalidate];
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
@@ -86,14 +91,14 @@
     [self.waveLayer addAnimation:animation forKey:nil];
 }
 
--(void)stopAnimating{
+- (void)stopAnimating {
     [self.displayLink invalidate];
     [self.waveLayer removeAllAnimations];
     self.waveLayer.path = nil;
 }
 
 //波浪绘制
--(void)update{
+- (void)update {
     self.phase += self.phaseShift;
     self.waveMid = self.waveWidth / 2.0f;
     self.maxAmplitude = self.waveHeight - 4.0f;
@@ -101,13 +106,13 @@
     UIGraphicsBeginImageContext(self.frame.size);
     UIBezierPath *wavePath = [UIBezierPath bezierPath];
     CGFloat endX = 0;
-    for(CGFloat x = 0; x<self.waveWidth + self.density; x += self.density) {
+    for (CGFloat x = 0; x<self.waveWidth + self.density; x += self.density) {
         endX=x;
         CGFloat scaling = -pow(x / self.waveMid  - 1, 2) + 1;//波浪中间变大
         CGFloat y = scaling * self.maxAmplitude  * sinf(2 * M_PI *(x / 50) * self.frequency + self.phase) + (self.waveHeight * 0.5);
         if (x==0) {
             [wavePath moveToPoint:CGPointMake(x, y)];
-        }else {
+        } else {
             [wavePath addLineToPoint:CGPointMake(x, y)];
         }
     }
@@ -122,11 +127,12 @@
 
 
 #pragma mark - getter/setter
--(void)setGrayLogoImage:(UIImage *)grayLogoImage{
+- (void)setGrayLogoImage:(UIImage *)grayLogoImage {
     _grayLogoImage = grayLogoImage;
     self.grayLogo.image = grayLogoImage;
 }
--(void)setRedLogoImage:(UIImage *)redLogoImage{
+
+- (void)setRedLogoImage:(UIImage *)redLogoImage {
     _redLogoImage = redLogoImage;
     self.redLogo.image = redLogoImage;
 }
