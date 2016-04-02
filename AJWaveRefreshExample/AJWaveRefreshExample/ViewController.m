@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MJRefresh.h"
-#import "AJWaveRefreshHeader.h"
-#import "AJWaveRefreshAutoStateFooter.h"
+#import "UIScrollView+AJWaveRefresh.h"
 
 static const CGFloat MJDuration = 3.0;
 /**
@@ -17,46 +15,56 @@ static const CGFloat MJDuration = 3.0;
  */
 #define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,AJWaveRefreshProtocol>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *data;
 @end
 
 @implementation ViewController
 
+#pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"UITableView";
     self.data = [[NSMutableArray alloc] init];
-    self.tableView.header = [AJWaveRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [self.tableView.header beginRefreshing];
+    [self.tableView setupRefresh:self];
+    //    [self.tableView setupRefreshFooter:self];
+    //    [self.tableView setupRefreshHeader:self];
     
-    self.tableView.footer = [AJWaveRefreshAutoStateFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView startHeaderRefreshing];
 }
 
+#pragma mark - AJWaveRefreshProtocol
+- (void)headerRereshing {
+    [self loadNewData];
+}
 
-- (void)loadNewData{
+- (void)footerRereshing {
+    [self loadNewData];
+}
+
+- (void)loadNewData {
     for (int i = 0; i<5; i++) {
         [self.data insertObject:MJRandomData atIndex:0];
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 刷新表格
+        //刷新表格
         [self.tableView reloadData];
         
-        // 拿到当前的下拉刷新控件，结束刷新状态
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
+        //拿到当前的下拉刷新控件，结束刷新状态
+        [self.tableView endRefreshing];
     });
 }
 
 
 #pragma mark - uitableViewDelegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.data.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.textLabel.text = [NSString stringWithFormat:@"index: %ld",(long)indexPath.row];
     return cell;

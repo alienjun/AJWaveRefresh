@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0713121CAFD1E000B86FC2 /* ExampleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0713111CAFD1E000B86FC2 /* ExampleCollectionView.m */; };
 		FBFEDE4A1CAE7CE100F3E9ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFEDE491CAE7CE100F3E9ED /* main.m */; };
 		FBFEDE4D1CAE7CE100F3E9ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFEDE4C1CAE7CE100F3E9ED /* AppDelegate.m */; };
 		FBFEDE501CAE7CE100F3E9ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFEDE4F1CAE7CE100F3E9ED /* ViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB0713101CAFD1E000B86FC2 /* ExampleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleCollectionView.h; sourceTree = "<group>"; };
+		FB0713111CAFD1E000B86FC2 /* ExampleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleCollectionView.m; sourceTree = "<group>"; };
 		FBFEDE451CAE7CE100F3E9ED /* AJWaveRefreshExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AJWaveRefreshExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFEDE491CAE7CE100F3E9ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBFEDE4B1CAE7CE100F3E9ED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				FBFEDE4C1CAE7CE100F3E9ED /* AppDelegate.m */,
 				FBFEDE4E1CAE7CE100F3E9ED /* ViewController.h */,
 				FBFEDE4F1CAE7CE100F3E9ED /* ViewController.m */,
+				FB0713101CAFD1E000B86FC2 /* ExampleCollectionView.h */,
+				FB0713111CAFD1E000B86FC2 /* ExampleCollectionView.m */,
 				FBFEDE511CAE7CE100F3E9ED /* Main.storyboard */,
 				FBFEDE541CAE7CE100F3E9ED /* Assets.xcassets */,
 				FBFEDE561CAE7CE100F3E9ED /* LaunchScreen.storyboard */,
@@ -361,6 +366,7 @@
 				FBFEDF611CAE7FF400F3E9ED /* MJRefreshBackNormalFooter.m in Sources */,
 				FBFEDF671CAE7FF400F3E9ED /* MJRefreshConst.m in Sources */,
 				FBFEDF5E1CAE7FF400F3E9ED /* MJRefreshAutoNormalFooter.m in Sources */,
+				FB0713121CAFD1E000B86FC2 /* ExampleCollectionView.m in Sources */,
 				FBFEDF621CAE7FF400F3E9ED /* MJRefreshBackStateFooter.m in Sources */,
 				FBFEDE4D1CAE7CE100F3E9ED /* AppDelegate.m in Sources */,
 				FBFEDE4A1CAE7CE100F3E9ED /* main.m in Sources */,
@@ -487,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AJWaveRefreshExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alienjun.AJWaveRefreshExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AJWaveRefreshExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alienjun.AJWaveRefreshExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +531,7 @@
 				FBFEDE5E1CAE7CE100F3E9ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
