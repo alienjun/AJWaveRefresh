@@ -1,7 +1,7 @@
 
 介绍
 ==============
-下拉刷新过渡动画，下拉的处理依赖[MJRefresh](https://github.com/CoderMJLee/MJRefresh)。<br/>
+下拉刷新过渡动画，下拉的处理依赖[MJRefresh](https://github.com/CoderMJLee/MJRefresh)。<br/><br/><br/>
 ![Aaron Swartz](https://github.com/alienjun/AJWaveRefresh/blob/master/Sceenshots/screenshot1.gif)
 ![Aaron Swartz](https://github.com/alienjun/AJWaveRefresh/blob/master/Sceenshots/screenshot2.gif)
 
