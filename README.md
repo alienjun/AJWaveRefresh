@@ -21,7 +21,7 @@
 
 用法
 ==============
-###集成刷新控件
+### 集成刷新控件
 	//#import   UIScrollView+AJWaveRefresh.h
 
 	=======UITableView======
@@ -45,14 +45,14 @@
     [self.collectionView setupRefreshFooter:self];
 
 
-###实现委托
+### 实现委托
 	//头部刷新
 	- (void)headerRereshing;
 	
 	//底部刷新
 	- (void)footerRereshing;
 
-###结束刷新
+### 结束刷新
 	//tableView刷新
 	[self.tableView endRefreshing];
 	
